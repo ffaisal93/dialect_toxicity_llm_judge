@@ -49,3 +49,29 @@ if [[ "$task" = "install_translation" || "$task" = "all" ]]; then
 	deactivate
 
 fi
+
+if [[ "$task" = "install_tf" || "$task" = "all" ]]; then
+	module load python/3.8.6-ff
+	module load git
+	rm -rf vnv/vnv_tf
+	python -m venv vnv/vnv_tf
+	source vnv/vnv_tf/bin/activate
+	pip install --upgrade pip
+	pip3 install tensorflow==2.4.0
+	pip install numpy==1.19.2
+	pip install spacy==3.1.0
+	pip install murre
+	python3 -m murre.download
+
+	deactivate
+
+fi
+
+if [[ "$task" = "run_murre_slurm" || "$task" = "all" ]]; then
+	mkdir tr_output
+	err_file="tr_output/murre.err"
+	out_file="tr_output/murre.out"
+	echo ${err_file}
+	echo ${out_file}
+	sbatch -o ${out_file} -e ${err_file} slurm/run.slurm
+fi

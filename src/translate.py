@@ -13,6 +13,8 @@ target_languages = [
     "swe_Latn", "fin_Latn", "ben_Beng"
 ]
 
+target_languages = ['azj_Latn','tur_Latn','azb_Arab','ckb_Arab','kmr_Latn','lvs_Latn','ltg_Latn','nob_Latn','nno_Latn','zho_Hans','zho_Hant','yue_Hant','nso_Latn','sot_Latn']
+
 src_lang = "eng_Latn"
 device = "cuda"  # or "cpu"
 beam_size = 4
