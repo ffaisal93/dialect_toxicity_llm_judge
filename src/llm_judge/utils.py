@@ -120,3 +120,8 @@ def convert_string_to_json(input_string):
     except Exception as e:
         print(f"An error occurred: {e}")
         return None
+
+def read_data(file_path):
+    with open(file_path, 'r') as f:
+        data = json.load(f)
+    return data

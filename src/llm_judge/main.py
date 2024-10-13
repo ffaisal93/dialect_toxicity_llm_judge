@@ -10,7 +10,8 @@ from utils import (
     update_arguments_with_config, 
     get_token,
     display_chat_generation,
-    convert_string_to_json
+    convert_string_to_json,
+    read_data
 )
 from llm_support import (
     get_model_and_tokenizer,
@@ -24,11 +25,13 @@ from prompt_support import (
 )
 from functools import partial
 from tqdm import tqdm
+import pandas as pd
 
 print(torch.cuda.get_device_name(0))
 
 def main(args):
     print(args)
+    model_name = args.model_id.split('/')[-1]
     HF_TOKEN = get_token(args.HF_TOKEN_PATH)
     
     if args.hf_checkpoint:
@@ -38,11 +41,16 @@ def main(args):
     device = model.device
     
     # sents = ["when i was a little girl, i use to think that she was the only one in the whole who isn't looking everyone world else"]
+    data = read_data(args.data_path)
+    if not os.path.exists(args.output_dir):
+        os.mkdir(args.output_dir)
     
+    output_path = os.path.join(args.output_dir, model_name)
+
+    preds = [generate_response(sent, model=model, tokenizer=tokenizer, device=device) for sent in tqdm(data['standard'][0:5])]
     
-    preds = [generate_response(sent, model=model, tokenizer=tokenizer, device=device) for sent in tqdm(sents)]
-    print(preds[0])
-    print(preds[1])
+    for pred in preds:
+        print(pred)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -52,6 +60,8 @@ if __name__ == '__main__':
     parser.add_argument('--config_path', default='/projects/klybarge/muhammad_research/toxic_dialect/try_dialect_toxicity/config.json')
     parser.add_argument('--cache_path', default='./.cache')
     parser.add_argument('--hf_checkpoint', default=None)
+    parser.add_argument('--data_path', default='/projects/klybarge/muhammad_research/toxic_dialect/dialect_toxicity_llm_judge/data/synthesis/english.json')
+    parser.add_argument('--output_dir', default='/results')
     args = parser.parse_args()
 
     config_file_path = args.config_path  # Replace with your config file path
