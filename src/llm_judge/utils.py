@@ -1,5 +1,7 @@
 import os
 import json
+from glob import glob
+import ntpath
 
 def get_token(path, complete=False):
     if complete == False:
@@ -133,3 +135,18 @@ def save_results(outputs, path):
     # Open the file in write mode and write the JSON data to it
     with open(f"{path}.json", 'w') as f:
         json.dump(outputs, f, indent=4)  # indent=4 for pretty-printing
+
+def combine_results(path:str, model_name:str):
+    all_files = glob(f"{path}/*.json")
+    output_name = os.path.join(path,'language.json')
+    if output_name in all_files:
+        all_files.remove(output_name)
+        os.remove(output_name)
+    results = {}
+    results['model'] = model_name
+    for file in all_files:
+        _, dialect = ntpath.split(file)
+        dialect = dialect.split('.')[0]
+        result = read_data(file)
+        results[dialect] = result
+    return results

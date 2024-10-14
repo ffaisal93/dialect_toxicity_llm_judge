@@ -12,7 +12,8 @@ from utils import (
     display_chat_generation,
     convert_string_to_json,
     read_data,
-    save_results
+    save_results,
+    combine_results
 )
 from llm_support import (
     get_model_and_tokenizer,
@@ -28,10 +29,15 @@ from functools import partial
 from tqdm import tqdm
 import pandas as pd
 
-print(torch.cuda.get_device_name(0))
+
 
 def main(args):
     print(args)
+
+    print(torch.cuda.get_device_name(0))
+    device = torch.device("cuda")
+    print(device)
+
     model_name = args.model_id.split('/')[-1]
     HF_TOKEN = get_token(args.HF_TOKEN_PATH)
     
@@ -39,8 +45,10 @@ def main(args):
         model, tokenizer = get_model_and_tokenizer_from_checkpoint(args.hf_checkpoint)
     else:
         model, tokenizer = get_model_and_tokenizer(args.hf_model_path, args.model_id, HF_TOKEN)
-    device = model.device
-    
+    tokenizer.pad_token = tokenizer.eos_token
+    model.to(device)
+    # tokenizer.to(device)
+
     # sents = ["when i was a little girl, i use to think that she was the only one in the whole who isn't looking everyone world else"]
     data = read_data(args.data_path)
     if not os.path.exists(args.output_dir):
@@ -54,11 +62,17 @@ def main(args):
         args.sample_count = len(data[args.dialect_list[0]])
     last_index = min(len(data[args.dialect_list[0]]),first_index+args.sample_count)
 
+    model_result_path = os.path.join(args.output_dir, model_name)
+    if not os.path.exists(model_result_path):
+        os.mkdir(model_result_path)
+
     for dialect in args.dialect_list:
         preds = [generate_response(sent, model=model, tokenizer=tokenizer, device=device) for sent in tqdm(data[dialect][first_index:last_index])]
-        run_name = f"{dialect}_{model_name}"
-        output_path = os.path.join(args.output_dir, run_name)
+        output_path = os.path.join(model_result_path, dialect)
         save_results(preds, output_path)
+    
+    combine_results(model_result_path, model_name)
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -68,8 +82,8 @@ if __name__ == '__main__':
     parser.add_argument('--config_path', default='/projects/klybarge/muhammad_research/toxic_dialect/try_dialect_toxicity/config.json')
     parser.add_argument('--cache_path', default='./.cache')
     parser.add_argument('--hf_checkpoint', default=None)
-    parser.add_argument('--data_path', default='/projects/klybarge/muhammad_research/toxic_dialect/dialect_toxicity_llm_judge/data/synthesis/english.json')
-    parser.add_argument('--output_dir', default='./results')
+    parser.add_argument('--data_path', default='/projects/klybarge/muhammad_research/toxic_dialect/dialect_toxicity_llm_judge/data/processed_data/english.json')
+    parser.add_argument('--output_dir', default='./../../results')
     parser.add_argument('--dialect_list', nargs='+', default=None)
     parser.add_argument('--sample_count_range_start', type=int, default=0)
     parser.add_argument('--sample_count', type=int, default=None)
