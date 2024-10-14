@@ -69,11 +69,14 @@ def main(args):
         os.mkdir(model_result_path)
 
     for dialect in args.dialect_list:
-        preds = [generate_response(sent, model=model, tokenizer=tokenizer, device=device) for sent in tqdm(data[dialect][first_index:last_index])]
         output_path = os.path.join(model_result_path, dialect)
+        if os.path.exists(output_path):
+            print(f"Skipping {dialect} for model {model_name}")
+            continue
+        preds = [generate_response(sent, model=model, tokenizer=tokenizer, device=device) for sent in tqdm(data[dialect][first_index:last_index])]
         save_results(preds, output_path)
     
-    combine_results(model_result_path, model_name)
+    # combine_results(model_result_path, model_name)
 
 
 if __name__ == '__main__':
