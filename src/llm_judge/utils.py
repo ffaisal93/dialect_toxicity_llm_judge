@@ -129,12 +129,14 @@ def read_data(file_path):
     return data
 
 def save_results(outputs, path):
+    path = f"{path}.json"
     if os.path.exists(path):
         old_results = read_data(path)
         outputs = old_results + outputs
     # Open the file in write mode and write the JSON data to it
-    with open(f"{path}.json", 'w') as f:
+    with open(path, 'w') as f:
         json.dump(outputs, f, indent=4)  # indent=4 for pretty-printing
+    print(f"Saved results at {path}")
 
 def combine_results(path:str, model_name:str):
     all_files = glob(f"{path}/*.json")
@@ -149,4 +151,6 @@ def combine_results(path:str, model_name:str):
         dialect = dialect.split('.')[0]
         result = read_data(file)
         results[dialect] = result
-    return results
+    
+    with open(output_name, 'w') as f:
+        json.dump(results, f, indent=4)  # indent=4 for pretty-printing
