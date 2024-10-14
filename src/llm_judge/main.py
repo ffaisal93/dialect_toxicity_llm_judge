@@ -11,7 +11,8 @@ from utils import (
     get_token,
     display_chat_generation,
     convert_string_to_json,
-    read_data
+    read_data,
+    save_results
 )
 from llm_support import (
     get_model_and_tokenizer,
@@ -44,13 +45,20 @@ def main(args):
     data = read_data(args.data_path)
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
-    
-    output_path = os.path.join(args.output_dir, model_name)
 
-    preds = [generate_response(sent, model=model, tokenizer=tokenizer, device=device) for sent in tqdm(data['standard'][0:5])]
-    
-    for pred in preds:
-        print(pred)
+    if args.dialect_list is None:
+        args.dialect_list = list(data.keys())
+
+    first_index = args.sample_count_range_start
+    if args.sample_count is None:
+        args.sample_count = len(data[args.dialect_list[0]])
+    last_index = min(len(data[args.dialect_list[0]]),first_index+args.sample_count)
+
+    for dialect in args.dialect_list:
+        preds = [generate_response(sent, model=model, tokenizer=tokenizer, device=device) for sent in tqdm(data[dialect][first_index:last_index])]
+        run_name = f"{dialect}_{model_name}"
+        output_path = os.path.join(args.output_dir, run_name)
+        save_results(preds, output_path)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -61,7 +69,10 @@ if __name__ == '__main__':
     parser.add_argument('--cache_path', default='./.cache')
     parser.add_argument('--hf_checkpoint', default=None)
     parser.add_argument('--data_path', default='/projects/klybarge/muhammad_research/toxic_dialect/dialect_toxicity_llm_judge/data/synthesis/english.json')
-    parser.add_argument('--output_dir', default='/results')
+    parser.add_argument('--output_dir', default='./results')
+    parser.add_argument('--dialect_list', nargs='+', default=None)
+    parser.add_argument('--sample_count_range_start', type=int, default=0)
+    parser.add_argument('--sample_count', type=int, default=None)
     args = parser.parse_args()
 
     config_file_path = args.config_path  # Replace with your config file path
@@ -69,4 +80,5 @@ if __name__ == '__main__':
 
     final_args = update_arguments_with_config(parser, config_data, args)
 
+    # print(final_args.dialect_list)
     main(final_args)

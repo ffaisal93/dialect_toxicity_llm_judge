@@ -125,3 +125,8 @@ def read_data(file_path):
     with open(file_path, 'r') as f:
         data = json.load(f)
     return data
+
+def save_results(outputs, path):
+    # Open the file in write mode and write the JSON data to it
+    with open(f"{path}.json", 'w') as f:
+        json.dump(outputs, f, indent=4)  # indent=4 for pretty-printing

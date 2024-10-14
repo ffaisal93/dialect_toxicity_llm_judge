@@ -1,5 +1,4 @@
 {
-    "datapath":"/projects/klybarge/muhammad_research/toxic_dialect/dialect_toxicity_llm_judge/data/toxigen/test-00000-of-00001.parquet",
     "HF_TOKEN_PATH":"/projects/klybarge/muhammad_research/HF_ACCESS_TOKEN",
     "WANDB_TOKEN_PATH":"/projects/klybarge/muhammad_research/WANDB_TOKEN"
 }
