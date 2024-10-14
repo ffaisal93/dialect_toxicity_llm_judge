@@ -26,7 +26,7 @@ source vnv/llm_judge/bin/activate
 cd src/llm_judge
 
 python main.py \
-    --data_path ./../../data/processed_data/${DATA_PATH}.json \
+    --data_path ./../../data/processed_data/${DATA_PATH} \
     --model_id ${MODEL_ID} \
     --current_dir /scratch/mrahma45/dialect_toxicity_llm_judge/src/llm_judge
 
