@@ -39,7 +39,7 @@ def update_arguments_with_config(parser, config_data, args):
     
     return final_args
 
-def load_config(config_file_path, complete=False):
+def load_config(config_file_path):
     """
     Load the configuration file in JSON format and return it as a dictionary.
 
@@ -49,10 +49,6 @@ def load_config(config_file_path, complete=False):
     Returns:
         dict: Configuration values from the file.
     """
-    if complete == False:
-        base_path = '/projects/klybarge/muhammad_research/'
-        config_file_path = os.path.join(base_path,config_file_path)
-
     if not os.path.exists(config_file_path):
         return False
     
@@ -136,7 +132,7 @@ def save_results(outputs, path):
     # Open the file in write mode and write the JSON data to it
     with open(path, 'w') as f:
         json.dump(outputs, f, indent=4)  # indent=4 for pretty-printing
-    print(f"Saved results at {path}")
+    # print(f"Saved results at {path}")
 
 def combine_results(path:str, model_name:str):
     all_files = glob(f"{path}/*.json")

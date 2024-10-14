@@ -1,6 +1,6 @@
 import os
-os.environ["HF_HOME"] = "./.cache"
-os.environ["TORCH_HOME"] = "./.cache"
+os.environ["HF_HOME"] = "./../../.cache"
+os.environ["TORCH_HOME"] = "./../../.cache"
 
 import argparse
 from prompt_support import formulate_prompt
@@ -33,6 +33,8 @@ import pandas as pd
 
 def main(args):
     print(args)
+    os.chdir(args.current_dir)
+    print(os.listdir())
 
     print(torch.cuda.get_device_name(0))
     device = torch.device("cuda")
@@ -78,15 +80,16 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--dataset', default='toxicity')
     parser.add_argument('--model_id', default='microsoft/Phi-3-mini-4k-instruct')
-    parser.add_argument('--hf_model_path', default='/projects/klybarge/muhammad_research/toxic_dialect/try_dialect_toxicity/hf_models')
-    parser.add_argument('--config_path', default='config.json')
-    parser.add_argument('--cache_path', default='./.cache')
+    parser.add_argument('--hf_model_path', default='./../../hf_models')
+    parser.add_argument('--config_path', default='./config.json')
+    parser.add_argument('--cache_path', default='./../../.cache')
     parser.add_argument('--hf_checkpoint', default=None)
-    parser.add_argument('--data_path', default='/data/processed_data/english.json')
+    parser.add_argument('--data_path', default='./../../data')
     parser.add_argument('--output_dir', default='./../../results')
     parser.add_argument('--dialect_list', nargs='+', default=None)
     parser.add_argument('--sample_count_range_start', type=int, default=0)
     parser.add_argument('--sample_count', type=int, default=None)
+    parser.add_argument('--current_dir', default='./')
     args = parser.parse_args()
 
     config_file_path = args.config_path  # Replace with your config file path
