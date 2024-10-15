@@ -94,7 +94,7 @@ if __name__ == '__main__':
     parser.add_argument('--sample_count', type=int, default=None)
     parser.add_argument('--current_dir', default='./')
     parser.add_argument('--overwrite', action=argparse.BooleanOptionalAction)
-    parser.add_argument('--max_new_tokens', default=100)
+    parser.add_argument('--max_new_tokens', type=int, default=150)
     args = parser.parse_args()
 
     config_file_path = args.config_path  # Replace with your config file path
