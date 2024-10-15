@@ -70,10 +70,10 @@ def main(args):
 
     for dialect in args.dialect_list:
         output_path = os.path.join(model_result_path, dialect)
-        if os.path.exists(f"{output_path}.json") and args.skip_if_exists:
+        if os.path.exists(f"{output_path}.json") and not args.overwrite:
             print(f"Skipping {dialect} for model {model_name}")
             continue
-        preds = [generate_response(sent, model=model, tokenizer=tokenizer, device=device) for sent in tqdm(data[dialect][first_index:last_index])]
+        preds = [generate_response(sent, model=model, tokenizer=tokenizer, device=device, max_new_token=args.max_new_tokens) for sent in tqdm(data[dialect][first_index:last_index])]
         save_results(preds, output_path)
     
     # combine_results(model_result_path, model_name)
@@ -93,7 +93,8 @@ if __name__ == '__main__':
     parser.add_argument('--sample_count_range_start', type=int, default=0)
     parser.add_argument('--sample_count', type=int, default=None)
     parser.add_argument('--current_dir', default='./')
-    parser.add_argument('--skip_if_exists', default=True)
+    parser.add_argument('--overwrite', action=argparse.BooleanOptionalAction)
+    parser.add_argument('--max_new_tokens', default=100)
     args = parser.parse_args()
 
     config_file_path = args.config_path  # Replace with your config file path

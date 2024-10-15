@@ -42,13 +42,13 @@ def format_output(generated_output: str):
     else:
         return generated_output
 
-def generate_response(input_sentence, model, tokenizer, device):
+def generate_response(input_sentence, model, tokenizer, device, max_new_token=100):
     conversation = formulate_chat_dict(input_sentence, rubrics=None)
     
     tokenized_input = tokenizer.apply_chat_template(conversation, tokenize=True, add_generation_prompt=True, return_tensors="pt").to(device)
     gen_tokens = model.generate(
         tokenized_input,
-        max_new_tokens=100,
+        max_new_tokens=max_new_token,
     )
     input_seq = tokenizer.decode(tokenized_input[0])
     output_seq = tokenizer.decode(gen_tokens[0])
