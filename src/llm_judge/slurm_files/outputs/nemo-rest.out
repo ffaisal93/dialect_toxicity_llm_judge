@@ -2028,3 +2028,15 @@ Namespace(dataset='toxicity', model_id='nvidia/Mistral-NeMo-Minitron-8B-Instruct
 ['__pycache__', 'combine_results.py', 'config.json', 'llm_support.py', 'main.py', 'prompt_support.py', 'requirements.txt', 'slurm_files', 'utils.py']
 NVIDIA A100-SXM4-80GB
 cuda
+Error decoding JSON: Extra data: line 9 column 1 (char 192)
+Error decoding JSON: Expecting ',' delimiter: line 2 column 32 (char 33)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: ST3 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Extra data: line 8 column 2 (char 193)
+Error: "Invalid value for Toxicity: ST3 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Extra data: line 8 column 2 (char 212)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)

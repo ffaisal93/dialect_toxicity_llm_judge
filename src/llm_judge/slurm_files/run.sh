@@ -1,13 +1,13 @@
 gpu_big="gpu:A100.80gb:1"
 gpu_small="gpu:3g.40gb:1"
 
-job_name="phi3-eng"
-err_file="outputs/${job_name}.err"
-out_file="outputs/${job_name}.out"
-export DATA_PATH=english.json
-export MODEL_ID=microsoft/Phi-3-mini-4k-instruct
+# job_name="phi3-eng"
+# err_file="outputs/${job_name}.err"
+# out_file="outputs/${job_name}.out"
+# export DATA_PATH=english.json
+# export MODEL_ID=microsoft/Phi-3-mini-4k-instruct
 
-sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunAll.SLURM
+# sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunAll.SLURM
 
 # job_name="nemo-eng"
 # err_file="outputs/${job_name}.err"
@@ -33,13 +33,13 @@ sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunAll
 
 # sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunAll.SLURM
 
-job_name="nemo-fin"
-err_file="outputs/${job_name}.err"
-out_file="outputs/${job_name}.out"
-export DATA_PATH=finnish.json
-export MODEL_ID=nvidia/Mistral-NeMo-Minitron-8B-Instruct
+# job_name="nemo-fin"
+# err_file="outputs/${job_name}.err"
+# out_file="outputs/${job_name}.out"
+# export DATA_PATH=finnish.json
+# export MODEL_ID=nvidia/Mistral-NeMo-Minitron-8B-Instruct
 
-sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunAll.SLURM
+# sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunAll.SLURM
 
 # job_name="aya-fin"
 # err_file="outputs/${job_name}.err"
@@ -94,3 +94,55 @@ sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunAll
 # export MODEL_ID=CohereForAI/aya-23-8B
 
 # sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunAll.SLURM
+
+
+
+
+# job_name="phi3-sot"
+# err_file="outputs/${job_name}.err"
+# out_file="outputs/${job_name}.out"
+# export DATA_PATH=sotho-tswana.json
+# export MODEL_ID=microsoft/Phi-3-mini-4k-instruct
+
+# sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunAll.SLURM
+
+# job_name="nemo-sot"
+# err_file="outputs/${job_name}.err"
+# out_file="outputs/${job_name}.out"
+# export DATA_PATH=sotho-tswana.json
+# export MODEL_ID=nvidia/Mistral-NeMo-Minitron-8B-Instruct
+
+# sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunAll.SLURM
+
+# job_name="nemo-nor"
+# err_file="outputs/${job_name}.err"
+# out_file="outputs/${job_name}.out"
+# export DATA_PATH=norwegian.json
+# export MODEL_ID=nvidia/Mistral-NeMo-Minitron-8B-Instruct
+
+# sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunAll.SLURM
+
+
+
+export DATA_PATH=finnish.json
+export MODEL_ID=nvidia/Mistral-NeMo-Minitron-8B-Instruct
+
+job_name="nemo-fin1"
+err_file="outputs/${job_name}.err"
+out_file="outputs/${job_name}.out"
+sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunFin1.SLURM
+
+job_name="nemo-fin2"
+err_file="outputs/${job_name}.err"
+out_file="outputs/${job_name}.out"
+sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunFin2.SLURM
+
+job_name="nemo-fin3"
+err_file="outputs/${job_name}.err"
+out_file="outputs/${job_name}.out"
+sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunFin3.SLURM
+
+job_name="nemo-fin4"
+err_file="outputs/${job_name}.err"
+out_file="outputs/${job_name}.out"
+sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunFin4.SLURM
