@@ -4,7 +4,15 @@ from sklearn.metrics import accuracy_score, f1_score
 import numpy as np
 import pandas as pd
 
-def evaluate_predictions(ground_truth, predictions, data_values, lang, dialect, result_dict):
+def evaluate_predictions(ground_truth, predictions, data_values, lang, dialect, result_dict, evaluation_stats):
+    # Initial checks
+    if not ground_truth or not predictions or not data_values:
+        print(f"Skipping evaluation for {lang} - {dialect} due to missing data.")
+        return
+    if len(predictions) < len(data_values):
+        data_values = data_values[:len(predictions)]
+        ground_truth = ground_truth[:len(predictions)]
+    
     # Discard indexes where data value is ''
     valid_indexes = [i for i, val in enumerate(data_values) if val != '']
     ground_truth = [ground_truth[i] for i in valid_indexes]
@@ -52,7 +60,7 @@ def evaluate_predictions(ground_truth, predictions, data_values, lang, dialect, 
                 predictions_bins_4.append(1)
             elif toxicity in ['S2']:
                 predictions_bins_4.append(2)
-            elif toxicity in ['S3']:
+            elif toxicity == 'S3':
                 predictions_bins_4.append(3)
             elif toxicity in ['S4', 'S5']:
                 predictions_bins_4.append(4)
@@ -97,6 +105,13 @@ def evaluate_predictions(ground_truth, predictions, data_values, lang, dialect, 
     result_dict[lang][dialect]['accuracy_3_bins'] = accuracy_3
     result_dict[lang][dialect]['f1_3_bins'] = f1_3
 
+    # Store evaluation statistics
+    evaluation_stats[(lang, dialect)] = {
+        'original_count': len(predictions),
+        'valid_count': len(filtered_predictions_5),
+        'valid_percentage': len(filtered_predictions_5) * 100 / len(predictions) if len(predictions) > 0 else 0
+    }
+
 # Example usage
 if __name__ == "__main__":
     df = pd.read_parquet("data/toxigen/test-00000-of-00001.parquet")
@@ -122,6 +137,7 @@ if __name__ == "__main__":
     results_final_dir = 'results_final'
     
     # Iterate over each model in the results_final directory
+    evaluation_stats_all_models = {}
     for model_dir in os.listdir(results_final_dir):
         model_path = os.path.join(results_final_dir, model_dir)
         if os.path.isdir(model_path):
@@ -134,10 +150,11 @@ if __name__ == "__main__":
                     with open(file_path, 'r') as json_file:
                         data = json.load(json_file)
                         result_predictions[language_cluster] = data
-                        print(f"{filename}: {len(data)} fields")
+                        print(f"{model_dir} {filename}: {len(data)} fields")
 
             # Initialize result dictionary
             result_dict = {lang: {dialect: {} for dialect in dialect_data} for lang, dialect_data in data_values.items()}
+            evaluation_stats = {}
 
             # Compute accuracy and F1 for all languages and dialects
             for lang, dialect_data in data_values.items():
@@ -147,7 +164,7 @@ if __name__ == "__main__":
                     else:
                         predictions = []
                     if predictions:
-                        evaluate_predictions(ground_truth, predictions, data_list, lang, dialect, result_dict)
+                        evaluate_predictions(ground_truth, predictions, data_list, lang, dialect, result_dict, evaluation_stats)
                     else:
                         result_dict[lang][dialect] = {
                             'accuracy_5_bins': 0.0,
@@ -167,3 +184,32 @@ if __name__ == "__main__":
             result_file_path = os.path.join(evaluation_scores_dir, f"{model_dir}.json")
             with open(result_file_path, 'w') as result_file:
                 json.dump(result_dict, result_file, indent=4)
+
+            # Store evaluation stats for the model
+            evaluation_stats_all_models[model_dir] = evaluation_stats
+
+    # Create latex_tables directory if not exists
+    latex_dir = 'latex_tables'
+    if not os.path.exists(latex_dir):
+        os.makedirs(latex_dir)
+
+    # Combine evaluation stats for all models into a DataFrame and save to LaTeX
+    combined_evaluation_stats = {}
+    for model_name, stats in evaluation_stats_all_models.items():
+        for (lang, dialect), values in stats.items():
+            if (lang, dialect) not in combined_evaluation_stats:
+                combined_evaluation_stats[(lang, dialect)] = {'Language': lang, 'Dialect': dialect}
+            combined_evaluation_stats[(lang, dialect)][f'Valid Percentage ({model_name})'] = values['valid_percentage']
+
+    combined_evaluation_stats_df = pd.DataFrame.from_dict(combined_evaluation_stats, orient='index')
+    combined_evaluation_stats_df.reset_index(drop=True, inplace=True)
+    latex_file_path = os.path.join(latex_dir, "evaluation_stats_all_models.tex")
+    with open(latex_file_path, 'w') as latex_file:
+        latex_file.write(combined_evaluation_stats_df.to_latex(index=False, float_format="%.2f"))
+
+    # Group by language and calculate the average percentage for each language
+    language_avg_stats = combined_evaluation_stats_df.groupby('Language').mean(numeric_only=True)
+    language_avg_stats.loc['Average'] = language_avg_stats.mean()
+    avg_latex_file_path = os.path.join(latex_dir, "evaluation_avg_stats_all_models.tex")
+    with open(avg_latex_file_path, 'w') as avg_latex_file:
+        avg_latex_file.write(language_avg_stats.to_latex(float_format="%.2f"))
