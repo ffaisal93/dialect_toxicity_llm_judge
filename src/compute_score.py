@@ -124,7 +124,7 @@ if __name__ == "__main__":
     result_data = {}
     data_values = {}
     for filename in os.listdir(processed_data_dir):
-        if filename.endswith('.json'):
+        if filename.endswith('.json') and not filename.startswith('bengali'):
             language_cluster = filename.replace('.json', '')
             file_path = os.path.join(processed_data_dir, filename)
             # Load the JSON data
@@ -143,7 +143,7 @@ if __name__ == "__main__":
         if os.path.isdir(model_path):
             result_predictions = {}
             for filename in os.listdir(model_path):
-                if filename.endswith('.json'):
+                if filename.endswith('.json') and not filename.startswith('bengali'):
                     language_cluster = filename.replace('.json', '')
                     file_path = os.path.join(model_path, filename)
                     # Load the JSON data
