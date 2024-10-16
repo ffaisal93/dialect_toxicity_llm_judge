@@ -127,22 +127,7 @@ gpu_small="gpu:3g.40gb:1"
 export DATA_PATH=finnish.json
 export MODEL_ID=nvidia/Mistral-NeMo-Minitron-8B-Instruct
 
-job_name="nemo-fin1"
+job_name="nemo-fin5"
 err_file="outputs/${job_name}.err"
 out_file="outputs/${job_name}.out"
-sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunFin1.SLURM
-
-job_name="nemo-fin2"
-err_file="outputs/${job_name}.err"
-out_file="outputs/${job_name}.out"
-sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunFin2.SLURM
-
-job_name="nemo-fin3"
-err_file="outputs/${job_name}.err"
-out_file="outputs/${job_name}.out"
-sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunFin3.SLURM
-
-job_name="nemo-fin4"
-err_file="outputs/${job_name}.err"
-out_file="outputs/${job_name}.out"
-sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunFin4.SLURM
+sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunFin5.SLURM
