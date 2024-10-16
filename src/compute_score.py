@@ -205,11 +205,11 @@ if __name__ == "__main__":
     combined_evaluation_stats_df.reset_index(drop=True, inplace=True)
     latex_file_path = os.path.join(latex_dir, "evaluation_stats_all_models.tex")
     with open(latex_file_path, 'w') as latex_file:
-        latex_file.write(combined_evaluation_stats_df.to_latex(index=False, float_format="%.2f"))
+        latex_file.write(combined_evaluation_stats_df.to_latex(index=False,escape=True,float_format="%.1f"))
 
     # Group by language and calculate the average percentage for each language
     language_avg_stats = combined_evaluation_stats_df.groupby('Language').mean(numeric_only=True)
     language_avg_stats.loc['Average'] = language_avg_stats.mean()
     avg_latex_file_path = os.path.join(latex_dir, "evaluation_avg_stats_all_models.tex")
     with open(avg_latex_file_path, 'w') as avg_latex_file:
-        avg_latex_file.write(language_avg_stats.to_latex(float_format="%.2f"))
+        avg_latex_file.write(language_avg_stats.to_latex(escape=True,float_format="%.1f"))

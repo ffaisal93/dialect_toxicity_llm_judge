@@ -74,24 +74,25 @@ for filename in os.listdir(evaluation_scores_dir):
             if standard_accuracy is not None and len(dialect_accuracies) > 0:
                 avg_dialectal_diff = np.mean([abs(standard_accuracy - acc) for acc in dialect_accuracies])
                 C_dl = 1 - avg_dialectal_diff
-                dialectal_consistency_records.append([language_cluster, model_name, round(C_dl, 2)])
+                dialectal_consistency_records.append([language_cluster, model_name, round(C_dl * 100, 2)])
 
         all_dialectal_consistency_records.extend(dialectal_consistency_records)
 
         # Calculate LLM-Human Consistency
-        C_lh = np.mean(llm_human_consistency)
+        C_lh = np.mean(llm_human_consistency) * 100
+        print(multilingual_variance)
 
         # Calculate Multilingual Consistency
         if len(multilingual_variance) > 1:
             variance = np.var(multilingual_variance)
-            C_ml = 1 - variance
+            C_ml = (1 - variance) * 100
         else:
             C_ml = 0
 
         # Calculate Dialectal Consistency
         if len(dialectal_consistency) > 0:
             avg_dialectal_diff = np.mean(dialectal_consistency)
-            C_dl = 1 - avg_dialectal_diff
+            C_dl = (1 - avg_dialectal_diff) * 100
         else:
             C_dl = 0
 
@@ -102,6 +103,10 @@ for filename in os.listdir(evaluation_scores_dir):
 
 # Create DataFrame for consistency scores
 consistency_df = pd.DataFrame(consistency_records, columns=['Model', 'LLM-Human Consistency', 'Multilingual Consistency', 'Dialectal Consistency'])
+
+# Add average row to consistency_df
+average_row = ['Average'] + [round(consistency_df[col].mean(), 2) for col in consistency_df.columns if col != 'Model']
+consistency_df.loc['Average'] = average_row
 
 # Save consistency scores to LaTeX table
 latex_table_path = os.path.join('latex_tables', 'consistency_scores.tex')
@@ -114,7 +119,11 @@ dialectal_consistency_df = pd.DataFrame(all_dialectal_consistency_records, colum
 # Pivot the dialectal consistency DataFrame to have models as columns
 dialectal_consistency_df = dialectal_consistency_df.pivot(index='Language Cluster', columns='Model', values='Dialectal Consistency')
 
+# Add average row to dialectal_consistency_df
+average_row = [round(dialectal_consistency_df[col].mean(), 2) for col in dialectal_consistency_df.columns]
+dialectal_consistency_df.loc['Average'] = average_row
+
 # Save dialectal consistency scores to LaTeX table
 dialectal_latex_table_path = os.path.join('latex_tables', 'dialectal_consistency_scores.tex')
 with open(dialectal_latex_table_path, 'w') as f:
-    f.write(dialectal_consistency_df.to_latex(caption='Dialectal Consistency Scores for Each Language Group and Model', label='tab:dialectal_consistency_scores', escape=True, float_format="{:.2f}".format))
+    f.write(dialectal_consistency_df.to_latex(caption='Dialectal Consistency Scores for Each Language Group and Model', label='tab:dialectal_consistency_scores', escape=True, float_format="{:.1f}".format))
