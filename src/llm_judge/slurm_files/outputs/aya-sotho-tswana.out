@@ -1,0 +1,965 @@
+Fri Oct 25 04:18:18 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 545.23.08              Driver Version: 545.23.08    CUDA Version: 12.3     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100-SXM4-80GB          On  | 00000000:41:00.0 Off |                    0 |
+| N/A   27C    P0              90W / 500W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+sotho-tswana
+CohereForAI/aya-101
+Namespace(dataset='toxicity', model_id='CohereForAI/aya-101', hf_model_path='./../../hf_models', config_path='./config.json', cache_path='./../../.cache', hf_checkpoint=None, data_path='./../../data/processed_data/sotho-tswana.json', output_dir='./../../results', dialect_list=None, sample_count_range_start=0, sample_count=None, current_dir='/scratch/mrahma45/dialect_toxicity_llm_judge/src/llm_judge', overwrite=None, max_new_tokens=250, HF_TOKEN_PATH='/projects/klybarge/muhammad_research/HF_ACCESS_TOKEN', WANDB_TOKEN_PATH='/projects/klybarge/muhammad_research/WANDB_TOKEN')
+['__pycache__', 'combine_results.py', 'config.json', 'llm_support.py', 'main.py', 'prompt_support.py', 'requirements.txt', 'slurm_files', 'utils.py']
+NVIDIA A100-SXM4-80GB
+cuda
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Target Group Identification: African Americans (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 196 (char 195)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 82 (char 81)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Target Group Identification: Male (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 68 (char 67)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 76 (char 75)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid keys found: ['D0']"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Target Group Identification: T0-T3 (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 151 (char 150)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 118 (char 117)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 130 (char 129)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: People (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 106 (char 105)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 96 (char 95)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 69 (char 68)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: Asian people (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: People of Chinese descent (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 163 (char 162)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 144 (char 143)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: Batho ba batšo (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 83 (char 82)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Unterminated string starting at: line 1 column 22 (char 21)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 154 (char 153)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 54 (char 53)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Target Group Identification: People (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 41 (char 40)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 89 (char 88)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 131 (char 130)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 54 (char 53)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Target Group Identification: Arabs (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: People with mental illness (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: Ba-Afrika (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid keys found: ['Sentence ya go Thoma']"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 46 (char 45)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 173 (char 172)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 172 (char 171)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: Monna (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: People of color (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 32 (char 31)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 132 (char 131)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 118 (char 117)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 82 (char 81)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 57 (char 56)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Target Group Identification: Female (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: Bafsa (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 150 (char 149)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: Batho ba batšo (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: Group target (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: Children (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 84 (char 83)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Target Group Identification: None (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 38 (char 37)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: South (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Target Group Identification: Americans (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: Bomoselemose (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Target Group Identification: Batho ba batšo (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 135 (char 134)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid keys found: ['Sentence ya go Thoma']"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Target Group Identification: Batho ba bašweu (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: People of American descent (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 157 (char 156)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Target Group Identification: Individual target (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 135 (char 134)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 182 (char 181)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting ',' delimiter: line 1 column 176 (char 175)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Target Group Identification: Jews (Expected one of ['T0', 'T1', 'T2', 'T3'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 82 (char 81)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting ',' delimiter: line 1 column 120 (char 119)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Extra data: line 1 column 150 (char 149)
+Error: "Invalid value for Stereotyping: ST0-ST3 (Expected one of ['ST0', 'ST1', 'ST2', 'ST3'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error decoding JSON: Expecting value: line 1 column 1 (char 0)
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"
+Error: "Invalid value for Toxicity: S1-S5 (Expected one of ['S1', 'S2', 'S3', 'S4', 'S5'])"

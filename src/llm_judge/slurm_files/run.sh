@@ -123,11 +123,16 @@ gpu_small="gpu:3g.40gb:1"
 # sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunAll.SLURM
 
 
+data_paths=("arabic" "bengali" "chinese" "common_turkic" "english" "finnish" "high_german" "kurdish" "norwegian" "sotho-tswana")
 
-export DATA_PATH=finnish.json
-export MODEL_ID=nvidia/Mistral-NeMo-Minitron-8B-Instruct
+# Loop through each data path and run the Python script
+for DATA_FILE in "${data_paths[@]}"
+do
+    export MODEL_ID=CohereForAI/aya-101
+    export DATA_PATH=${DATA_FILE}
+    job_name="aya-${DATA_FILE}"
+    err_file="outputs/${job_name}.err"
+    out_file="outputs/${job_name}.out"
 
-job_name="nemo-fin5"
-err_file="outputs/${job_name}.err"
-out_file="outputs/${job_name}.out"
-sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunFin5.SLURM
+    sbatch -J ${job_name} -o ${out_file} -e ${err_file} --gres ${gpu_big} bashRunAll.SLURM
+done

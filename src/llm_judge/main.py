@@ -49,7 +49,6 @@ def main(args):
         model, tokenizer = get_model_and_tokenizer(args.hf_model_path, args.model_id, HF_TOKEN)
     tokenizer.pad_token = tokenizer.eos_token
     model.to(device)
-    # tokenizer.to(device)
 
     # sents = ["when i was a little girl, i use to think that she was the only one in the whole who isn't looking everyone world else"]
     data = read_data(args.data_path)
@@ -73,7 +72,7 @@ def main(args):
         if os.path.exists(f"{output_path}.json") and not args.overwrite:
             print(f"Skipping {dialect} for model {model_name}")
             continue
-        preds = [generate_response(sent, model=model, tokenizer=tokenizer, device=device, max_new_token=args.max_new_tokens) for sent in tqdm(data[dialect][first_index:last_index])]
+        preds = [generate_response(sent, model=model, tokenizer=tokenizer, device=device, max_new_token=args.max_new_tokens, model_type='seq2seqLM') for sent in tqdm(data[dialect][first_index:last_index])]
         save_results(preds, output_path)
     
     # combine_results(model_result_path, model_name)

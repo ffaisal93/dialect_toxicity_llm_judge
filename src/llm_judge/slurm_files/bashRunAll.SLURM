@@ -6,7 +6,7 @@
 #SBATCH --gres=gpu:A100.80gb:1                # up to 8; only request what you need
 #SBATCH --mem=100GB
 #SBATCH --export=ALL
-#SBATCH --time=0-23:00:00                   # set to 2hr; please choose carefully
+#SBATCH --time=2-23:00:00                   # set to 2hr; please choose carefully
 
 set echo
 umask 0027
@@ -25,10 +25,14 @@ source vnv/llm_judge/bin/activate
 
 cd src/llm_judge
 
+echo "${DATA_PATH}"
+echo "${MODEL_ID}"
+
 python main.py \
-    --data_path ./../../data/processed_data/${DATA_PATH} \
+    --data_path ./../../data/processed_data/${DATA_PATH}.json \
     --model_id ${MODEL_ID} \
     --current_dir /scratch/mrahma45/dialect_toxicity_llm_judge/src/llm_judge \
     --max_new_tokens 250
+
 
 deactivate

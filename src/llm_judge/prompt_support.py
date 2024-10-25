@@ -56,7 +56,7 @@ rubric_definition = {
   – D3: Significant impact (substantial change in toxicity due to dialectal form)
 """
 }
-def get_output_formate(rubrics: List[str], output_format: dict)-> str:
+def get_output_format(rubrics: List[str], output_format: dict)-> str:
   """
   The fucntion formulates output string for the prompt from the list of rubrics. 
   This method will be called from formulate_prompt method
@@ -88,7 +88,7 @@ def formulate_prompt(rubrics: List[str] = None, input_statement: str = None, **k
     rubrics = kwargs["rubric_definition"].keys()
 
   if "output_format" not in kwargs:
-    kwargs["output_format"] = get_output_formate(rubrics, output_format)
+    kwargs["output_format"] = get_output_format(rubrics, output_format)
   
   prompt = f'Instruction: {kwargs["instruction"]}\nOutput Format: {kwargs["output_format"]}\nEvaluation Rubric:'
 
@@ -116,6 +116,11 @@ def formulate_chat_dict(input_statement: str, rubrics=None, **kwargs):
     }
     ]
   return conversation
+
+def formulate_input_seq(input_statement: str, rubrics=None, **kwargs):
+  prompt = formulate_prompt(rubrics=rubrics, kwargs=kwargs)
+
+  return f"{prompt} {input_statement}"
 
 def formulate_chat_dict_grouped(input_statements: List[str], rubrics=None, **kwargs):
   prompt = formulate_prompt(rubrics=rubrics, kwargs=kwargs)
