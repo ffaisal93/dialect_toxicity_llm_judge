@@ -66,7 +66,7 @@ def generate_response(input_sentence, model, tokenizer: AutoTokenizer, device, m
                 "pad_token_id": tokenizer.eos_token_id
                     }
 
-    if model_type == 'causal_LM':
+    if model_type == 'causalLM':
         conversation = formulate_chat_dict(input_sentence, rubrics=None)
         tokenized_input = tokenizer.apply_chat_template(conversation, tokenize=True, add_generation_prompt=True, return_tensors="pt").to(device)
         gen_tokens = model.generate(

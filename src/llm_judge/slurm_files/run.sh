@@ -128,9 +128,9 @@ data_paths=("arabic" "bengali" "chinese" "common_turkic" "english" "finnish" "hi
 # Loop through each data path and run the Python script
 for DATA_FILE in "${data_paths[@]}"
 do
-    export MODEL_ID=CohereForAI/aya-101
+    export MODEL_ID=CohereForAI/aya-expanse-8b
     export DATA_PATH=${DATA_FILE}
-    job_name="aya-${DATA_FILE}"
+    job_name="ayax-${DATA_FILE}"
     err_file="outputs/${job_name}.err"
     out_file="outputs/${job_name}.out"
 

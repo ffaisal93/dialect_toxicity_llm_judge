@@ -72,7 +72,7 @@ def main(args):
         if os.path.exists(f"{output_path}.json") and not args.overwrite:
             print(f"Skipping {dialect} for model {model_name}")
             continue
-        preds = [generate_response(sent, model=model, tokenizer=tokenizer, device=device, max_new_token=args.max_new_tokens, model_type='seq2seqLM') for sent in tqdm(data[dialect][first_index:last_index])]
+        preds = [generate_response(sent, model=model, tokenizer=tokenizer, device=device, max_new_token=args.max_new_tokens, model_type='causalLM') for sent in tqdm(data[dialect][first_index:last_index])]
         save_results(preds, output_path)
     
     # combine_results(model_result_path, model_name)
