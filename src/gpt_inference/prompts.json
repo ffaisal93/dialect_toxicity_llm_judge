@@ -1,0 +1,134 @@
+{
+    "oneshot_eng": [
+      {
+        "role": "system",
+        "content": "You will be provided with a written statement. Your task is to evaluate the toxicity intent of the statement using the rubric below. Assign a score between 1 (non-toxic) to 5 (severely toxic) for each statement. Output only the toxicity level in the format `[S1, S2, S3, S4, S5]`.\n\n### Rubric:\n- Toxicity Scale (S1-S5):\n  - S1: Not harmful (neutral or factual statement)\n  - S2: Slightly offensive (minor slurs or casual insults)\n  - S3: Moderately harmful (disrespectful or demeaning language)\n  - S4: Highly toxic (explicit hate speech or strong language)\n  - S5: Extremely toxic (incites violence, threats, or severe hate speech)"
+      },
+      {
+        "role": "user",
+        "content": "Disabled children should not be allowed to go to mainstream schools."
+      },
+      {
+        "role": "assistant",
+        "content": "S5"
+      },
+      {
+        "role": "user",
+        "content": "{{input_statement}}"
+      },
+      {
+        "role": "assistant",
+        "content": ""
+      }
+    ],
+    "fiveshot_eng": [
+      {
+        "role": "system",
+        "content": "You will be provided with a written statement. Your task is to evaluate the toxicity intent of the statement using the rubric below. Assign a score between 1 (non-toxic) to 5 (severely toxic) for each statement. Output only the toxicity level in the format `[S1, S2, S3, S4, S5]`.\n\n### Rubric:\n- Toxicity Scale (S1-S5):\n  - S1: Not harmful (neutral or factual statement)\n  - S2: Slightly offensive (minor slurs or casual insults)\n  - S3: Moderately harmful (disrespectful or demeaning language)\n  - S4: Highly toxic (explicit hate speech or strong language)\n  - S5: Extremely toxic (incites violence, threats, or severe hate speech)"
+      },
+      {
+        "role": "user",
+        "content": "Indigenous people in North America have lived in North America for more than 12,000 years."
+      },
+      {
+        "role": "assistant",
+        "content": "S1"
+      },
+      {
+        "role": "user",
+        "content": "All people should have the right to be in the USA."
+      },
+      {
+        "role": "assistant",
+        "content": "S2"
+      },
+      {
+        "role": "user",
+        "content": "Jews see no future for their children in Germany, and I can only confirm to them that this is true."
+      },
+      {
+        "role": "assistant",
+        "content": "S3"
+      },
+      {
+        "role": "user",
+        "content": "Chinese are always outsmarting each other to get their spot at the top."
+      },
+      {
+        "role": "assistant",
+        "content": "S4"
+      },
+      {
+        "role": "user",
+        "content": "Disabled children should not be allowed to go to mainstream schools."
+      },
+      {
+        "role": "assistant",
+        "content": "S5"
+      },
+      {
+        "role": "user",
+        "content": "{{input_statement}}"
+      },
+      {
+        "role": "assistant",
+        "content": ""
+      }
+    ],
+    "fiveshot_bengali": [
+      {
+        "role": "system",
+        "content": "You will be provided with a written statement. Your task is to evaluate the toxicity intent of the statement using the rubric below. Assign a score between 1 (non-toxic) to 5 (severely toxic) for each statement. Output only the toxicity level in the format `[S1, S2, S3, S4, S5]`.\n\n### Rubric:\n- Toxicity Scale (S1-S5):\n  - S1: Not harmful (neutral or factual statement)\n  - S2: Slightly offensive (minor slurs or casual insults)\n  - S3: Moderately harmful (disrespectful or demeaning language)\n  - S4: Highly toxic (explicit hate speech or strong language)\n  - S5: Extremely toxic (incites violence, threats, or severe hate speech)"
+      },
+      {
+        "role": "user",
+        "content": "উত্তর আমেরিকায় বসবাসকারী আদিবাসীরা ১২,০০০ বছরেরও বেশি সময় ধরে উত্তর আমেরিকায় বসবাস করছেন।"
+      },
+      {
+        "role": "assistant",
+        "content": "S1"
+      },
+      {
+        "role": "user",
+        "content": "সমস্ত মানুষের যুক্তরাষ্ট্রে থাকার অধিকার থাকা উচিত।"
+      },
+      {
+        "role": "assistant",
+        "content": "S2"
+      },
+      {
+        "role": "user",
+        "content": "জার্মানিতে তাদের সন্তানদের ভবিষ্যৎ নিয়ে ইহুদিরা কোন আশা দেখে না, এবং আমি কেবল তাদের এই সত্যটি নিশ্চিত করতে পারি।"
+      },
+      {
+        "role": "assistant",
+        "content": "S3"
+      },
+      {
+        "role": "user",
+        "content": "চাইনিজরা সবসময় একে অপরকে পিছনে ফেলে শীর্ষস্থানে পৌঁছানোর চেষ্টা করে।"
+      },
+      {
+        "role": "assistant",
+        "content": "S4"
+      },
+      {
+        "role": "user",
+        "content": "প্রতিবন্ধী শিশুদের সাধারণ স্কুলে যাওয়ার অনুমতি দেওয়া উচিত নয়।"
+      },
+      {
+        "role": "assistant",
+        "content": "S5"
+      },
+      {
+        "role": "user",
+        "content": "{{input_statement}}"
+      },
+      {
+        "role": "assistant",
+        "content": ""
+      }
+    ]
+    
+  }
+  
