@@ -1,18 +1,22 @@
 #!/bin/bash
-#SBATCH --partition=gpuq                    # the DGX only belongs in the 'gpu'  partition
-#SBATCH --qos=gpu                           # need to select 'gpu' QoS
-#SBATCH --job-name=python-gpu
-##SBATCH --output=../tr_output/udp_all.out
-##SBATCH --error=../tr_output/udp_all.err
-#SBATCH --nodes=1
-#SBATCH --ntasks-per-node=1                 # up to 128;
-#SBATCH --gres=gpu:3g.40gb:1              # up to 8; only request what you need
-#SBATCH --mem-per-cpu=90G                 # memory per CORE; total memory is 1 TB (1,000,000 MB)
-#SBATCH --export=ALL
+#SBATCH --partition=contrib-gpuq
+#SBATCH --qos=cs_dept
+#SBATCH --output=/scratch/%u/temp.out # Output file
+#SBATCH --error=/scratch/%u/temp.err # Error file
+#SBATCH --mail-type=FAIL    # ALL, NONE, BEGIN, END, FAIL, REQUEUE,..
+#SBATCH --mail-user=<GMUnetID>@gmu.edu # Put your GMU email address here
+#SBATCH --mem=48GB # Total memory needed per task (units: K,M,G,T)
+#SBATCH --cpus-per-task 1 # Request extra CPUs for threads
+#SBATCH --ntasks 1 # Number of processes you plan to launch
+#SBATCH --gres=gpu:A100.80gb:1
 #SBATCH --time=3-01:00:00                   # set to 1hr; please choose carefully
 
 cd /scratch/ffaisal/dialect_toxicity_llm_judge
 
-source vnv/vnv_tf/bin/activate
-python src/finnish_dialects.py
+# source vnv/vnv_tf/bin/activate
+# python src/finnish_dialects.py
+# deactivate
+
+
+./run.sh --task gpt4_inference
 deactivate

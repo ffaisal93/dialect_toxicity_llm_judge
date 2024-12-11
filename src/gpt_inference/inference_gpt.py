@@ -49,8 +49,8 @@ def generate_toxicity_scores(api_key: str, prompt_template: List[Dict[str, str]]
     return responses
 
 # Function to save results in the specified structure
-def save_results(results: Dict[str, List[str]], output_dir: str, model_name: str, input_file_name: str):
-    result_path = os.path.join(output_dir, model_name)
+def save_results(results: Dict[str, List[str]], output_dir: str, model_name: str, prompt_type: str, input_file_name: str):
+    result_path = os.path.join(output_dir, model_name, prompt_type)
     os.makedirs(result_path, exist_ok=True)
 
     output_file_path = os.path.join(result_path, input_file_name)
@@ -95,7 +95,7 @@ def main():
 
     # Save results
     input_file_name = os.path.basename(args.input_file)  # Get the input file name
-    save_results(results, args.output_dir, args.model_name, input_file_name)
+    save_results(results, args.output_dir, args.model_name, args.prompt_type, input_file_name)
 
 if __name__ == "__main__":
     main()
