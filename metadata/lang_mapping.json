@@ -56,5 +56,7 @@
   "sot_Latn": "Southern Sotho",
   "tur_Latn": "Central Oghuz",
   "azb_Arab": "South Azerbaijani",
-  "azj_Latn": "North Azerbaijani"
+  "azj_Latn": "North Azerbaijani",
+  "standard_Bn": "Standard",
+  "dhaka":"dhaka"
 }

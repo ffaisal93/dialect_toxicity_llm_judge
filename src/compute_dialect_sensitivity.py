@@ -1,6 +1,5 @@
 import os
 import json
-from collections import Counter
 import pandas as pd
 
 # Directory containing the processed data
@@ -12,6 +11,20 @@ results_final_dir = 'results_final'
 # Load language mapping from metadata
 with open('metadata/lang_mapping.json', 'r') as mapping_file:
     lang_mapping = json.load(mapping_file)
+
+# Standard dialects mapping
+standard_dialects = {
+    'arabic': 'Standard Arabic',
+    'bengali': 'Standard',
+    'chinese': 'Cantonese',
+    'finnish': 'Finnish',
+    'kurdish': 'Central Kurdish',
+    'norwegian': 'Norwegian Bokmal',
+    'high_german': 'Latvian',
+    'english': 'Standard',
+    'sotho-tswana': 'Northern Sotho',
+    'common_turkic': 'Central Oghuz'
+}
 
 # Iterate over each model in the results_final directory
 sensitivity_stats_all_models = {}
@@ -85,4 +98,39 @@ combined_sensitivity_stats_df = pd.concat([combined_sensitivity_stats_df, averag
 
 latex_file_path = os.path.join(latex_dir, "sensitivity_stats_all_models.tex")
 with open(latex_file_path, 'w') as latex_file:
-    latex_file.write(combined_sensitivity_stats_df.to_latex(multicolumn=True, multirow=True, escape=True, float_format="%.2f"))
+    latex_file.write(combined_sensitivity_stats_df.to_latex(multicolumn=True, multirow=True, escape=True, float_format="%.2f").replace('_', '\_'))
+
+# Create a new LaTeX table for min and max impact dialects per language cluster
+min_max_stats = []
+standard_count_min = 0
+standard_count_max = 0
+for language, group in combined_sensitivity_stats_df.groupby(level=0):
+    if language == 'Average':
+        continue
+    min_dialect = group['Average'].idxmin()[1]
+    min_value = group['Average'].min()
+    max_dialect = group['Average'].idxmax()[1]
+    max_value = group['Average'].max()
+    delta_value = max_value - min_value
+
+    # Underline standard dialects
+    if min_dialect == standard_dialects.get(language, ''):
+        min_dialect = f'\\underline{{{min_dialect.capitalize()}}}'
+        standard_count_min += 1
+    if max_dialect == standard_dialects.get(language, ''):
+        max_dialect = f'\\underline{{{max_dialect.capitalize()}}}'
+        standard_count_max += 1
+
+    min_max_stats.append((language.capitalize(), f"{min_dialect} ({min_value:.2f})", f"{max_dialect} ({max_value:.2f})", f"{delta_value:.2f}"))
+
+min_max_df = pd.DataFrame(min_max_stats, columns=['Language Cluster', 'Dialect (Min Impact)', 'Dialect (Max Impact)', '\Delta (Max - Min)'])
+
+# Add row for percentage of standard variety appearing in the table
+total_entries = len(min_max_df)  # Each language has min and max entries
+standard_percentage_min = (standard_count_min / total_entries) * 100
+standard_percentage_max = (standard_count_max / total_entries) * 100
+min_max_df.loc[len(min_max_df)] = ['Percentage of Standard Variety', f'{standard_percentage_min:.2f}%', f'{standard_percentage_max:.2f}%', '']
+
+min_max_latex_file_path = os.path.join(latex_dir, "min_max_impact_dialects.tex")
+with open(min_max_latex_file_path, 'w') as latex_file:
+    latex_file.write(min_max_df.to_latex(index=False, escape=False).replace('_', '\_'))
