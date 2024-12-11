@@ -87,11 +87,10 @@ def main():
     results = {}
     for dialect, sentences in sentences_by_dialect.items():
         logging.info(f"Processing dialect: {dialect}")
-        if args.cut_off and dialect=='standard':
+        if args.cut_off:
             args.cut_off=int(args.cut_off)
             sentences = sentences[:args.cut_off]  # Apply cut-off limit
             results[dialect] = generate_toxicity_scores(api_key, prompt_template, args.prompt_type, args.model_name, sentences)
-            print(results[dialect])
 
     # Save results
     input_file_name = os.path.basename(args.input_file)  # Get the input file name
