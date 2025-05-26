@@ -46,7 +46,7 @@ def model_table_generation():
                         dialect_name.capitalize(),
                         metrics['f1'] * 100,
                         metrics['rmse_similarity'] * 100,
-                        metrics['spearman_corr']
+                        # metrics['spearman_corr']
                     ])
 
                     # Update highest scoring dialect for the current language cluster
@@ -65,11 +65,11 @@ def model_table_generation():
             highest_scoring_dialects_per_model[model_name] = highest_scoring_dialects
 
             df = pd.DataFrame(records, columns=[
-                'Language Cluster', 'Dialect', 'F1', 'RMSE-SIM', 'RANK-CORR'])
+                'Language Cluster', 'Dialect', 'F1', 'RMSE-SIM'])
 
             # Normalize and round values
-            df[['F1', 'RMSE-SIM', 'RANK-CORR']] = df[
-                ['F1', 'RMSE-SIM', 'RANK-CORR']].round(1)
+            df[['F1', 'RMSE-SIM']] = df[
+                ['F1', 'RMSE-SIM']].round(1)
 
             df=df.replace('High\_german','Latvian')
             # Set multi-level index
@@ -78,8 +78,8 @@ def model_table_generation():
             # Calculate average row
             avg_values = df.mean().round(1)
             avg_row = pd.DataFrame(
-                [[avg_values['F1'], avg_values['RMSE-SIM'], avg_values['RANK-CORR']]],
-                columns=['F1', 'RMSE-SIM', 'RANK-CORR'],
+                [[avg_values['F1'], avg_values['RMSE-SIM']]],
+                columns=['F1', 'RMSE-SIM'],
                 index=pd.MultiIndex.from_tuples([('Average', 'Average')], names=['Language Cluster', 'Dialect'])
             )
 
@@ -146,6 +146,53 @@ def summary_table_generation():
     # Sort values by average row values in descending order (excluding the average row itself)
     sorted_summary_pivot = summary_pivot.drop(index='Average').sort_values(by=('RMSE-SIM', summary_pivot.columns.levels[1][0]), ascending=False)
     summary_pivot = pd.concat([sorted_summary_pivot, summary_pivot.loc[['Average']]])
+
+    
+
+    summary_pivot=summary_pivot[[
+            (      'F1',         'gpt-4.1-2025-04-14'),
+            (      'F1', 'Mistral-Nemo-Instruct-2407'),
+            (      'F1',               'Llama-3.1-8B'),
+            (      'F1',        'Qwen2.5-7B-Instruct'),
+            (      'F1',             'gemma-3-12b-it'),
+            ('RMSE-SIM',         'gpt-4.1-2025-04-14'),
+            ('RMSE-SIM', 'Mistral-Nemo-Instruct-2407'),
+            ('RMSE-SIM',               'Llama-3.1-8B'),
+            ('RMSE-SIM',        'Qwen2.5-7B-Instruct'),
+            ('RMSE-SIM',             'gemma-3-12b-it'),
+            ]]
+    
+    # Mapping of long model names to shorter ones
+    short_names = {
+        "gpt-4.1-2025-04-14": "GPT",
+        "Mistral-Nemo-Instruct-2407": "Nemo",
+        "Llama-3.1-8B": "LLaMA",
+        "Qwen2.5-7B-Instruct": "Qwen",
+        "gemma-3-12b-it": "Gemma",
+    }
+
+    # Reconstruct new column MultiIndex with shortened model names
+    # Reassign the second level of the MultiIndex
+    summary_pivot.columns = pd.MultiIndex.from_tuples([
+        (metric, short_names.get(model, model)) for metric, model in summary_pivot.columns
+    ], names=summary_pivot.columns.names)
+    
+    # Get the last 5 columns under the 'RMSE-SIM' metric
+    rmse_cols = summary_pivot['RMSE-SIM'].iloc[:, -5:]
+
+    # Compute row-wise average of these columns
+    summary_pivot[('RMSE-SIM', 'AVG')] = rmse_cols.mean(axis=1)
+    # Separate the last row (assuming it’s a macro-average or total row)
+    main_part = summary_pivot.iloc[:-1]
+    last_row = summary_pivot.iloc[[-1]]
+
+    # Sort the main part by RMSE-SIM AVG column in descending order
+    main_part_sorted = main_part.sort_values(by=('RMSE-SIM', 'AVG'), ascending=False)
+
+    # Concatenate the sorted part with the last row
+    summary_pivot = pd.concat([main_part_sorted, last_row])
+
+
 
     # Save summary dataframe table to file
     summary_csv_table_path = os.path.join(latex_tables_dir, 'summary_models_table.pkl')

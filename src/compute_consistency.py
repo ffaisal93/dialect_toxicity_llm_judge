@@ -172,6 +172,7 @@ def clean_discrepancies(results):
 
     # Iterate through the dictionary and clean each label
     cleaned_results = {}
+    cleaned_count={}
     for key, values in results.items():
         unexpected_count = 0  # Counter for unexpected labels
         cleaned_values = [clean_label(value) for value in values]
@@ -180,8 +181,12 @@ def clean_discrepancies(results):
         # Print the total count of unexpected labels
         if unexpected_count > 0:
             print(f"Total unexpected labels encountered: {unexpected_count},{key}")
+        cleaned_count[key]={
+            'total':len(values),
+            'error':unexpected_count
+        }
 
-    return cleaned_results
+    return cleaned_results,cleaned_count
 
 
 
@@ -477,25 +482,188 @@ def variety_mapping(data):
     return mapped_data
 
 
+import pandas as pd
+
+def build_consistency_latex_table(consistency_scores, short_names):
+    rows = []
+    counts = {}
+
+    # Collect all rows and counts
+    for model, metrics in consistency_scores.items():
+        model_short = short_names.get(model, model)
+        counts[model_short] = metrics.get("count", 0)
+
+        # Add main metrics
+        rows.append([metrics.get("llm-human", None), model_short, "llm-human", " "])
+        rows.append([metrics.get("mlingual", None), model_short, "multilingual", " "])
+        rows.append([metrics.get("dialectal_consistency_mean", None), model_short, "dialectal-mean", " "])
+
+        # Add dialectal sub-rows
+        for lang, score in metrics.get("dialectal_consistency", {}).items():
+            rows.append([score, model_short, lang, "dialectal"])
+
+    # Build DataFrame
+    df = pd.DataFrame(rows, columns=["Score", "Model", "Metric", "Group"])
+
+    # Pivot with MultiIndex (Group, Metric)
+    df_pivot = df.pivot(index=["Group", "Metric"], columns="Model", values="Score")
+
+    # Add count row
+    count_series = pd.Series(counts, name=(" ", "count"))
+    df_pivot = pd.concat([df_pivot, count_series.to_frame().T])
+
+    # Set row order
+    row_order = [
+        (" ", "llm-human"),
+        (" ", "multilingual"),
+        ("dialectal", "arabic"),
+        ("dialectal", "bengali"),
+        ("dialectal", "chinese"),
+        ("dialectal", "common_turkic"),
+        ("dialectal", "english"),
+        ("dialectal", "finnish"),
+        ("dialectal", "high_german"),
+        ("dialectal", "kurdish"),
+        ("dialectal", "norwegian"),
+        ("dialectal", "sotho-tswana"),
+        (" ", "dialectal-mean"),
+        (" ", "count"),
+    ]
+    df_pivot = df_pivot.loc[row_order]
+
+    # Format values: scale to 0-100 and format to 1 decimal place
+    def formatter(val):
+        if isinstance(val, float):
+            return f"{val * 100:.1f}"  # Scale and format
+        return val  # For counts or other entries
+
+    df_pivot = df_pivot.applymap(formatter)
+
+    # Convert to LaTeX
+    latex = df_pivot.to_latex(
+        escape=False, multicolumn=True, multirow=True,
+        caption="Consistency Scores across Models",
+        label="tab:consistency_scores"
+    )
+    return latex
+
+
+def compute_accuracy_percentages_all_models(scores_dict):
+    all_results = {}
+
+    for model_name, model_scores in scores_dict.items():
+        cluster_percentages = {}
+
+        for cluster, varieties in model_scores.items():
+            total = 0
+            errors = 0
+
+            for variety_stats in varieties.values():
+                total += variety_stats.get("total", 0)
+                errors += variety_stats.get("error", 0)
+
+            if total > 0:
+                accuracy = ((total - errors) / total) * 100
+                cluster_percentages[cluster] = round(accuracy, 2)
+            else:
+                cluster_percentages[cluster] = None  # Handle missing data
+
+        all_results[model_name] = cluster_percentages
+
+    return all_results
+
+
+def compute_global_percentages_all_models(scores_dict):
+    all_results = {}
+
+    for model_name, model_scores in scores_dict.items():
+        cluster_percentages = {}
+        total = 0
+        errors = 0
+        for cluster, varieties in model_scores.items():
+
+            for variety_stats in varieties.values():
+                print(variety_stats)
+                total += variety_stats.get("total", 0)
+                errors += variety_stats.get("error", 0)
+
+        if total > 0:
+            print(total)
+            accuracy = ((total - errors) / total) * 100
+            cluster_percentages['p'] = round(accuracy, 2)
+            cluster_percentages['f'] = total - errors
+        else:
+            cluster_percentages = None  # Handle missing data
+
+        all_results[model_name] = cluster_percentages
+
+    return all_results
+
+
+
+def convert_percentages_to_latex(percentages_dict, short_names=None):
+    # Step 1: Convert to DataFrame
+    df = pd.DataFrame.from_dict(percentages_dict, orient="index").T  # Clusters as rows, models as columns
+
+    # Step 2: Optional model name shortening
+    if short_names:
+        df.rename(columns=short_names, inplace=True)
+
+    # Step 3: Add averages
+    df['Avg'] = df.mean(axis=1)  # Row-wise average (per language cluster)
+    avg_row = df.mean(axis=0).to_frame().T
+    avg_row.index = ['Avg']  # Label the row as 'Avg'
+    df = pd.concat([df, avg_row])
+
+    # Step 4: Format percentages
+    df = df.applymap(lambda x: f"{x:.1f}" if pd.notnull(x) else "-")
+    df = df[['GPT', 'Gemma', 'LLaMA', 'Nemo', 'Qwen', 'Avg']]
+    print(df.columns)
+
+    # Step 5: Convert to LaTeX
+    latex = df.to_latex(escape=False, caption="Accuracy Percentages per Model and Language Cluster with Averages", label="tab:accuracy_table")
+    return latex
+
+
+
+
+
+# Example usage
+short_names = {
+    "gpt-4.1-2025-04-14": "GPT",
+    "Mistral-Nemo-Instruct-2407": "Nemo",
+    "Llama-3.1-8B": "LLaMA",
+    "Qwen2.5-7B-Instruct": "Qwen",
+    "gemma-3-12b-it": "Gemma",
+}
+
+
+
+
+
 # Example usage
 if __name__ == "__main__":
     num_bins=5
     cut_off=380
-    indices_to_remove = [6,8,13,17,22]
+    indices_to_remove = []
     df = pd.read_parquet("data/toxigen/test-00000-of-00001.parquet")
     ground_truth_series = list(df['intent'])
     ground_truth = assign_bins(ground_truth_series, num_bins)
     ground_truth=ground_truth[:cut_off]
 
     # Directory containing the results data
-    results_final_dir = 'results_final'    
-    model_lists=['gpt-4o-2024-08-06']
+    results_final_dir = 'vllm_results_gpt_assisted'    
+    model_lists=['gpt-4.1-2025-04-14','Mistral-Nemo-Instruct-2407','Llama-3.1-8B',
+                 'Qwen2.5-7B-Instruct','gemma-3-12b-it']
     settings=['oneshot_eng']
     # Iterate over each model in the results_final directory
     predictions = {}
+    consistency_scores={}
+    correct_scores={}
     for model_dir in model_lists:
+        correct_scores[model_dir]={}
         for setting in settings:
-            model_path = os.path.join(results_final_dir, model_dir, setting)
+            model_path = os.path.join(results_final_dir, model_dir)
             print(model_path)
             if os.path.isdir(model_path):
                 result_predictions = {}
@@ -507,10 +675,11 @@ if __name__ == "__main__":
                         with open(file_path, 'r') as json_file:
                             data = json.load(json_file)
                             print(language_cluster)
-                            data_processed = clean_discrepancies(data)
-                            data_after_cut = data_cutoff(data_processed, cut_off)
-                            mapped_data = variety_mapping(data_after_cut)
+                            data_after_cut = data_cutoff(data, cut_off)
+                            data_processed,cleaned_counts = clean_discrepancies(data_after_cut)
+                            mapped_data = variety_mapping(data_processed)
                             predictions[language_cluster]=mapped_data
+                            correct_scores[model_dir][language_cluster]=cleaned_counts
                             print(language_cluster, mapped_data.keys())
 
     
@@ -539,9 +708,8 @@ if __name__ == "__main__":
             print(result_file_path)
             with open(result_file_path, 'w') as result_file:
                 json.dump(result_dict, result_file, indent=4)
-
-
             
+
             # Compute Metrics
             llm_human_consistency = compute_llm_human_consistency(filtered_ground_truth, filtered_predictions)
             print(f"LLM-Human Consistency (Clh): {llm_human_consistency:.4f}")
@@ -553,4 +721,27 @@ if __name__ == "__main__":
             for lang, cdl in cluster_level_consistencies.items():
                 print(f"Dialectal Consistency for {lang} (Cdl): {cdl:.4f}")
             print(f"Dialectal Consistency (Cdl): {dialectal_consistency:.4f}")
+
+            consistency_scores[model_dir]={
+                'llm-human':llm_human_consistency,
+                'mlingual':multilingual_consistency,
+                'dialectal_consistency':cluster_level_consistencies,
+                'dialectal_consistency_mean':dialectal_consistency,
+                'count':len(filtered_ground_truth)
+            }
+    
+    print(consistency_scores)
+
+    latex_table=build_consistency_latex_table(consistency_scores, short_names)
+    print(latex_table)
+
+
+
+    # Example usage
+    percentages = compute_accuracy_percentages_all_models(correct_scores)
+    latex_output = convert_percentages_to_latex(percentages, short_names)
+    print(correct_scores)
+    print(latex_output)
+    global_scores=compute_global_percentages_all_models(correct_scores)
+    print(global_scores)
 

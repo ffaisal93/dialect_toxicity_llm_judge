@@ -10,6 +10,10 @@ from sklearn.metrics import accuracy_score, f1_score, mean_squared_error
 from sklearn.metrics import mean_absolute_error, cohen_kappa_score
 import numpy as np
 
+global min_pred
+
+min_pred = float("inf")
+
 def assign_bins(values, num_bins):
     """
     Dynamically assign values to bins with fixed integer edges.
@@ -25,6 +29,7 @@ def assign_bins(values, num_bins):
     bin_edges = np.arange(1, num_bins + 1)  # [1, 2, 3, 4, ..., num_bins + 1]
 
     bins = []
+    # print(values[:10])
     for val in values:
         for i in range(len(bin_edges)):
             # First bin includes only val == 1.0
@@ -103,18 +108,21 @@ def compute_bins_and_metrics(ground_truth, predictions, num_bins):
 
     # Map predictions to bins
     for pred in predictions:
-        if isinstance(pred, dict) and 'Toxicity' in pred:
-            toxicity = pred['Toxicity']
-            if toxicity in ['S1']:
-                predictions_bins.append(1)
-            elif toxicity in ['S2']:
-                predictions_bins.append(2 if num_bins > 2 else 1)
-            elif toxicity == 'S3':
-                predictions_bins.append(3 if num_bins > 3 else (2 if num_bins > 2 else 1))
-            elif toxicity in ['S4', 'S5']:
-                predictions_bins.append(num_bins)
+        # if isinstance(pred, dict) and 'Toxicity' in pred:
+        toxicity = pred
+        if toxicity in ['S1']:
+            predictions_bins.append(1)
+        elif toxicity in ['S2']:
+            predictions_bins.append(2 if num_bins > 2 else 1)
+        elif toxicity == 'S3':
+            predictions_bins.append(3 if num_bins > 3 else (2 if num_bins > 2 else 1))
+        elif toxicity in ['S4']:
+            predictions_bins.append(4)
+        elif toxicity in ['S5']:
+            predictions_bins.append(5)
         else:
             predictions_bins.append(None)
+    print("----",predictions[:5], ground_truth_bins[:5], predictions_bins[:5])
 
     # Filter out None values for valid comparisons
     filtered_data = [(g, p) for g, p in zip(ground_truth_bins, predictions_bins) if p is not None]
@@ -145,6 +153,20 @@ def evaluate_predictions(ground_truth, predictions, data_values, lang, dialect, 
         data_values = data_values[:len(predictions)]
         ground_truth = ground_truth[:len(predictions)]
     
+    cut_off=380
+    if cut_off:
+        predictions = predictions[:cut_off]
+        data_values = data_values[:cut_off]
+        ground_truth = ground_truth[:cut_off]
+
+    
+    
+    # global min_pred
+    # print("----------------------------",min_pred, len(predictions))
+    # if len(predictions)<min_pred:
+    #     min_pred=len(predictions)
+    # print("----------------------------",min_pred, len(predictions))
+
     # Discard indexes where data value is ''
     valid_indexes = [i for i, val in enumerate(data_values) if val != '']
     ground_truth = [ground_truth[i] for i in valid_indexes]
@@ -263,7 +285,8 @@ if __name__ == "__main__":
                 print(f"{filename}: {len(data)} fields")
 
     # Directory containing the results data
-    results_final_dir = 'results_final'
+    results_final_dir = 'vllm_results_gpt_assisted'
+    results_eng_fin = 'vllm_results'
     
     # Iterate over each model in the results_final directory
     evaluation_stats_all_models = {}
@@ -321,13 +344,14 @@ if __name__ == "__main__":
     latex_dir = 'latex_tables'
     if not os.path.exists(latex_dir):
         os.makedirs(latex_dir)
+    
 
     
 
 
 
     # create_latex_tables(evaluation_stats_all_models,latex_dir)
-    # make_figure(language_avg_stats,latex_dir)
+    # # make_figure(language_avg_stats,latex_dir)
 
 
 
