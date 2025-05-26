@@ -81,7 +81,7 @@ def main():
     prompt_template = load_prompt(args.prompt_file)
     sentences_by_dialect = load_sentences(args.input_file)
 
-    print(sentences_by_dialect.keys())
+    logging.info(sentences_by_dialect.keys())
 
     # Process each dialect
     results = {}
@@ -90,7 +90,7 @@ def main():
         if args.cut_off:
             args.cut_off=int(args.cut_off)
             sentences = sentences[:args.cut_off]  # Apply cut-off limit
-            results[dialect] = generate_toxicity_scores(api_key, prompt_template, args.prompt_type, args.model_name, sentences)
+        results[dialect] = generate_toxicity_scores(api_key, prompt_template, args.prompt_type, args.model_name, sentences)
 
     # Save results
     input_file_name = os.path.basename(args.input_file)  # Get the input file name

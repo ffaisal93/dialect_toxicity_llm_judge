@@ -1,8 +1,8 @@
 #!/bin/bash
 #SBATCH --partition=contrib-gpuq
-#SBATCH --qos=cs_dept
-#SBATCH --output=/scratch/%u/temp.out # Output file
-#SBATCH --error=/scratch/%u/temp.err # Error file
+#SBATCH --qos=gpu
+#SBATCH --output=/scratch/%u/temp_gpt.out # Output file
+#SBATCH --error=/scratch/%u/temp_gpt.err # Error file
 #SBATCH --mail-type=FAIL    # ALL, NONE, BEGIN, END, FAIL, REQUEUE,..
 #SBATCH --mail-user=<GMUnetID>@gmu.edu # Put your GMU email address here
 #SBATCH --mem=48GB # Total memory needed per task (units: K,M,G,T)
@@ -18,5 +18,9 @@ cd /scratch/ffaisal/dialect_toxicity_llm_judge
 # deactivate
 
 
-./run.sh --task gpt4_inference
-deactivate
+# ./run.sh --task gpt4_inference
+# deactivate
+
+# ./run.sh --task translation_gpt_assisted_inference
+
+./run.sh --task gpt4_assisted_inference

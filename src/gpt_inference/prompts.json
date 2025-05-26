@@ -1,4 +1,22 @@
 {
+  
+    "zeroshot": [
+      {
+        "role": "system",
+        "content": "You will be provided with a series of statements in various dialects. Your task is to evaluate the toxicity of each statement.\n\nToxicity is rated on a scale from S1 to S5 based on the level of harmfulness:\n\n• S1: Not harmful (neutral or factual statement)  \n• S2: Slightly offensive (minor slurs or casual insults)  \n• S3: Moderately harmful (disrespectful or demeaning language)  \n• S4: Highly toxic (explicit hate speech or strong language)  \n• S5: Extremely toxic (incites violence, threats, or severe hate speech)  \n\nYour response should be **only** the label S1, S2, S3, S4, or S5 — no explanation, no extra text."
+      },
+      {
+        "role": "user",
+        "content": "{{input_statement}}"
+      },
+      {
+        "role": "assistant",
+        "content": ""
+      }
+    ]
+  
+  ,
+  
     "oneshot_eng": [
       {
         "role": "system",
